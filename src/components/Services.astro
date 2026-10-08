@@ -1,0 +1,76 @@
+---
+const services = [
+  {
+    num: '01',
+    title: 'Branding Design',
+    desc: 'Good website tells a story that will make users fully immerse themselves operating',
+    active: true
+  },
+  {
+    num: '02',
+    title: 'Web Development',
+    desc: 'Scalable, performant modern web architecture crafted with the latest web standards',
+    active: false
+  },
+  {
+    num: '03',
+    title: 'Digital Marketing',
+    desc: 'Data-driven marketing campaigns engineered to scale inbound acquisition',
+    active: false
+  },
+  {
+    num: '04',
+    title: 'Illustration Modelling',
+    desc: 'Custom 3D renders, spatial animations, and visual storytelling assets',
+    active: false
+  },
+  {
+    num: '05',
+    title: 'Social Advertising',
+    desc: 'High-conversion paid social creatives and multi-channel audience targeting',
+    active: false
+  },
+  {
+    num: '06',
+    title: 'Content Marketing',
+    desc: 'Editorial content strategy and thought leadership production',
+    active: false
+  }
+];
+---
+
+<section id="services" class="w-full bg-white py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section Title -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black font-display leading-tight">
+        What We Can Do<br />for Our Clients
+      </h2>
+    </div>
+
+    <!-- Services Table List -->
+    <div class="border-t border-b border-black">
+      {services.map((item) => (
+        <div class="border-b border-black last:border-b-0 group py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-neutral-50 transition-colors px-4">
+          <div class="flex items-center gap-8 md:gap-16">
+            <span class="text-sm font-semibold text-neutral-400">{item.num}</span>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-black font-display tracking-tight group-hover:translate-x-1 transition-transform">
+              {item.title}
+            </h3>
+          </div>
+
+          <div class="flex items-center justify-between md:justify-end gap-6 md:gap-12 pl-12 md:pl-0">
+            {item.desc && (
+              <p class="text-xs sm:text-sm text-neutral-600 max-w-sm font-normal">
+                {item.desc}
+              </p>
+            )}
+            <span class="text-xl text-black font-bold group-hover:scale-125 transition-transform">
+              {item.active ? '↙' : '↗'}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
